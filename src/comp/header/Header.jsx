@@ -1,26 +1,34 @@
 import './Header.css';
 import { IoCart } from 'react-icons/io5';
 import { CiMenuBurger } from 'react-icons/ci';
+import { CiLogout } from 'react-icons/ci';
+
 export const Header = () => {
   return (
     <>
       <nav className="navigation">
+        <span>ここにuserのログイン情報を出したい</span>
         <div className="navigation-leftBlock">
-          <img
-            /* 一旦サイズの仮置き */
-            width={100}
-            height={100}
-            className="navigation-leftBlock-logo"
-            src="../../../public/scissors_logo.png"
-            alt="scissors_logo"
-          />
+          <a href="/home">
+            <img
+              /* 一旦サイズの仮置き */
+              width={200}
+              height={150}
+              className="navigation-leftBlock-logo"
+              src="../../../public/scissors_logo.png"
+              alt="scissors_logo"
+            />
+          </a>
         </div>
         <div className="navigation-rightBlock">
           <button className="navigation-cartButton">
-            <IoCart />
+            <IoCart size={50} />
           </button>
           <button className="navigation-button">
-            <CiMenuBurger />
+            <CiLogout size={50} />;
+          </button>
+          <button className="navigation-button">
+            <CiMenuBurger size={50} />
           </button>
         </div>
       </nav>

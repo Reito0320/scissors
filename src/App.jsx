@@ -1,26 +1,30 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
 import './App.css';
-import { Header, Home, FormSection } from './utill/import';
+import { Header, Home, FormSection, Login, Logout } from './utill/import';
 
 function App() {
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
+  const [userData, setUserData] = useState([]);
 
   useState(() => {
     setTimeout(() => {
-      setLoading(true);
+      // setLoading(true);
     }, 3000);
   }, []);
 
   return (
     <>
-      <Header />
+      {localStorage.getItem('isAuth') && <Header />}
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route
+            path="/"
+            element={<Login userData={userData} setUserData={setUserData} />}
+          ></Route>
           <Route path="form" element={<FormSection />}></Route>
-          <Route></Route>
-          <Route></Route>
+          <Route path="home" element={<Home />}></Route>
+          <Route path="logout" element={<Logout />}></Route>
         </Routes>
       </Router>
     </>

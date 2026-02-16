@@ -1,0 +1,39 @@
+.section {
+  background-color: rgb(225, 250, 255);
+  padding: 200px;
+}
+.login-box {
+  background-color: #ffffff;
+  padding: 60px;
+  margin: 0px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px -5px #777777;
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+  margin-top: 0px;
+  padding: 0px;
+}
+.button-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  border: solid rgb(2, 2, 2);
+  gap: 20px;
+  border-radius: 10px;
+}
+.login-button {
+  background-color: rgb(233, 235, 235);
+  box-shadow: 10px 10px 15px -5px #777777;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black;
+}
+
+.login-button:hover {
+  box-shadow: none;
+}
