@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Header, Home, FormSection, Login, Logout } from './utill/import';
+import { Header, Home, Login, Logout, Shopping } from './utill/import';
 
 function App() {
   // const [isLoading, setLoading] = useState(false);
@@ -16,17 +16,15 @@ function App() {
   return (
     <>
       {localStorage.getItem('isAuth') && <Header />}
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={<Login userData={userData} setUserData={setUserData} />}
-          ></Route>
-          <Route path="form" element={<FormSection />}></Route>
-          <Route path="home" element={<Home />}></Route>
-          <Route path="logout" element={<Logout />}></Route>
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/shopping" element={<Shopping />}></Route>
+        <Route
+          path="/login"
+          element={<Login userData={userData} setUserData={setUserData} />}
+        ></Route>
+        <Route path="/logout" element={<Logout />}></Route>
+      </Routes>
     </>
   );
 }
